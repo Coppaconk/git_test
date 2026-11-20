@@ -1,6 +1,6 @@
-# ShotDeck False Color (Brave / Chrome extension)
+# False Color (Brave / Chrome extension)
 
-Toggles a cinema-style false color exposure overlay on images on shotdeck.com.
+Toggles a cinema-style false color exposure overlay on images on any website (built with ShotDeck in mind).
 
 ## Install (Brave)
 1. Go to `brave://extensions` and turn on **Developer mode** (top right).
@@ -19,5 +19,6 @@ real exposure.
 
 ## How it works
 It uses an SVG colour filter (luma → lookup table) applied with CSS, so it never reads pixels and works
-on images served from ShotDeck's image servers. To use it on other sites, add them to `matches` in
-`manifest.json` (or use `"<all_urls>"`) and reload the extension.
+on images served from other domains (CDNs). It runs on all sites; the on/off switch is global, so
+turning it on affects every open tab. Browser pages like `brave://` and the Chrome Web Store can't be
+changed by extensions.
