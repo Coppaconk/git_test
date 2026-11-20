@@ -1,0 +1,22 @@
+html.sdfc-on .sdfc-t { filter: url(#sdfc-main) !important; }
+html.sdfc-on .sdfc-t.sdfc-split { filter: url(#sdfc-split) !important; }
+html.sdfc-on.sdfc-hold .sdfc-t { filter: none !important; }
+
+[data-sdfc-ui] { all: initial; }
+#sdfc-legend, #sdfc-tip, #sdfc-scope {
+  position: fixed !important; z-index: 2147483647 !important; pointer-events: none !important;
+  background: rgba(10,10,10,.88) !important; color: #eee !important;
+  font: 11px/1.35 system-ui, -apple-system, sans-serif !important;
+  border-radius: 8px !important; box-shadow: 0 2px 10px rgba(0,0,0,.5) !important;
+  box-sizing: border-box !important; filter: none !important;
+}
+#sdfc-legend { right: 12px; bottom: 12px; padding: 8px 10px; max-width: 240px; }
+#sdfc-scope { right: 12px; top: 12px; padding: 6px 8px 8px; }
+#sdfc-tip { padding: 5px 8px; white-space: nowrap; display: none; }
+#sdfc-legend .t, #sdfc-scope .t { display: block; font-weight: 600; margin-bottom: 4px; }
+#sdfc-legend .r, #sdfc-tip .r { display: flex; align-items: center; gap: 6px; margin: 2px 0; }
+#sdfc-legend .s, #sdfc-tip .s { display: inline-block; width: 12px; height: 12px; border-radius: 2px; flex: none; }
+#sdfc-legend .p { opacity: .7; margin-left: auto; padding-left: 8px; white-space: nowrap; }
+#sdfc-legend .h { display: block; margin-top: 6px; opacity: .6; }
+#sdfc-tip .p { opacity: .7; }
+#sdfc-scope canvas { display: block; width: 256px; height: 128px; filter: none !important; }

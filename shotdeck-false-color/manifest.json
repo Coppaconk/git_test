@@ -1,48 +1,33 @@
 {
   "manifest_version": 3,
   "name": "False Color",
-  "version": "1.0.0",
-  "description": "Toggle a cinema-style false color exposure overlay on images on any website (great for ShotDeck).",
-  "permissions": [
-    "storage"
-  ],
-  "background": {
-    "service_worker": "background.js"
-  },
+  "version": "2.0.0",
+  "description": "Cinema-style exposure tools for images on any website: false color, zebras, focus peaking, luma, readout and scopes.",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "options_ui": { "page": "options.html", "open_in_tab": true },
   "action": {
     "default_title": "False Color",
     "default_popup": "popup.html",
-    "default_icon": {
-      "16": "icons/icon16.png",
-      "32": "icons/icon32.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
-    }
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
   },
-  "icons": {
-    "16": "icons/icon16.png",
-    "32": "icons/icon32.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  },
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
   "commands": {
     "toggle-false-color": {
-      "suggested_key": {
-        "default": "Alt+Shift+F",
-        "mac": "Alt+Shift+F"
-      },
-      "description": "Toggle false color on/off"
+      "suggested_key": { "default": "Alt+Shift+F", "mac": "Alt+Shift+F" },
+      "description": "Turn on/off for this site"
+    },
+    "cycle-mode": {
+      "suggested_key": { "default": "Alt+Shift+M", "mac": "Alt+Shift+M" },
+      "description": "Switch tool (false color, zebras, luma, peaking)"
     }
   },
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "presets.js",
-        "content.js"
-      ],
+      "matches": ["<all_urls>"],
+      "js": ["presets.js", "content.js"],
+      "css": ["content.css"],
       "run_at": "document_idle",
       "all_frames": true
     }
